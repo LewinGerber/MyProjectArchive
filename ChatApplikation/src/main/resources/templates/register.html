@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>SoSpri-the-page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/pr_bbw.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script>
+    $(function() {
+      $("#includedHeader").load("fragments/header.html");
+      $("#includedFooter").load("fragments/footer.html");
+    });
+  </script>
+</head>
+
+<body>
+  <div id="includedHeader"></div>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div>
+            <h4 style="margin-top: 30px">Register</h4>
+            <div class="row">
+              <div class=" col-lg-8 col-lg-offset-2">
+                <form id="register-form" method="post" action="" role="form" th:action="@{/get-register}" th:object="${registerMember}">
+                  <div class="messages"></div>
+                  <div class="controls">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="form_name">Firstname *</label>
+                          <input
+                                  id="form_name"
+                                  type="text"
+                                  name="name"
+                                  minlength="2"
+                                  maxlength="512"
+                                  class="form-control"
+                                  placeholder="Please enter your firstname *"
+                                  required
+                                  data-error="Firstname is required (2-25 Zeichen)"
+                                  th:field="*{prename}"
+                          >
+                          <div class="help-block with-errors"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="form_lastname">Lastname *</label>
+                            <input
+                                    id="form_lastname"
+                                    type="text"
+                                    name="surname"
+                                    minlength="2"
+                                    maxlength="20"
+                                    class="form-control"
+                                    placeholder="Lastname"
+                                    required
+                                    data-error="Lastname is required."
+                                    th:field="*{lastname}"
+                            >
+                          <div class="help-block with-errors"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label for="form_password">Password *</label> <input id="form_password" type="password" name="password" value="password" class="form-control" placeholder="Please enter your password *" required="required"  pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-._;:]).{8,}$" data-error="Valid password is required." th:field="*{password}">
+                          <div class="help-block with-errors"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label for="form_confirmation">Passwort
+                            confirmation *</label> <input id="form_confirmation" type="password" name="confirmation" class="form-control" placeholder="Please enter your password*" required="required" data-error="Valid confirmation is required."
+                            th:field="*{confirmation}">
+                          <div class="help-block with-errors"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label for="form_confirmation">Challenge Number</label>
+                          <input id="form_challengeNumber" min="100" value="123" type="number" name="challengeNumber" class="form-control"
+                                 placeholder="432" required="required" data-error="Valid challenge number is required." th:field="*{challengeNumber}">
+                          <div class="help-block with-errors"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p id="score-display" style="color: red; font-style: italic">0%</p>
+                        <input type="submit" class="btn btn-success btn-send" value="Register">
+                        <p></p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p th:if="${#fields.hasErrors('prename')}" th:errors="*{prename}">Prename Error</p>
+                        <p th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}">Lastname Error</p>
+                        <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</p>
+                        <p th:text="*{message}"></p>
+                      </div>
+                    </div> 
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div style="height: 200px"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="includedFooter"></div>
+  <script>
+    document.getElementById("form_password").addEventListener("change",() => document.getElementById("score-display").innerHTML = evaluatePasswordScore());
+    function evaluatePasswordScore() {
+      const input = document.getElementById("form_password").value;
+      if(!(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-._;:]).{8,}$/.test(input)))
+        return "Das Passwort sollte Klein- und Grossbuchstaben sowie Sonderzeichen enthalten. Eine Länge von 8 Zeichen ist das Minimum."
+      let score = 0;
+      /*
+        1. with lower case and upper case = 20P.
+        2. with numbers = 20P.
+        3. with special characters = 15P.
+        4. length > 8 = 15P.
+        5. length > 15 = 10P.
+        6. length > 20 = 5P.
+        7. length > 50 = 5P.
+        total: 90P.
+       */
+      if (/^.*[A-Za-z]+.*$/.test(input)) score += 20;
+      if (/^.*\w+.*$/.test(input)) score += 20;
+      if (/^.*[#?!@$ %^&*-._;:]+.*$/.test(input)) score += 15;
+      if (input.length > 8) score += 5;
+      if (input.length > 15) score += 5;
+      if (input.length > 20) score += 15;
+      if (input.length > 50) score += 10;
+
+      //set color
+      const percentage = Math.round(score/90*100);
+      if(percentage < 35) document.getElementById("score-display").style.color = "red";
+      if(percentage >= 35) document.getElementById("score-display").style.color = "orange";
+      if(percentage >= 60) document.getElementById("score-display").style.color = "#FFD919";
+      if(percentage >= 85) document.getElementById("score-display").style.color = "green";
+      return percentage + "%";
+    }
+  </script>
+</body>
+
+</html>

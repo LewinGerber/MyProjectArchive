@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de-CH" xmlns:th="http://www.thymeleaf.org" xmlns:tiles="http://www.thymeleaf.org">
+
+<head>
+    <title>SoSpri-the-page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/pr_bbw.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script>
+        $(function() {
+            $("#includedHeader").load("fragments/header.html");
+            $("#includedFooter").load("fragments/footer.html");
+        });
+    </script>
+</head>
+
+<body>
+<div id="includedHeader"></div>
+
+<div class="container" style="margin-top:30px; margin-bottom:30px">
+    <div class="row">
+        <div class="span12">
+            <div class="centered">
+                <h2>Login</h2>
+                <form name="f" th:action="@{/login}" method="post">
+                <fieldset>
+                    <legend>Please Login</legend>
+                    <div th:if="${param.error}" class="alert alert-error">
+                        Invalid username and password.
+                    </div>
+                    <div th:if="${param.logout}" class="alert alert-success">
+                        You have been logged out.
+                    </div>
+                    <div th:if="${param.expired}" class="alert alert-success">
+                        You have been logged out.
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password"/>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </fieldset>
+                    <input type="hidden" name="_csrf" value="b1f1cfe2-56b4-407b-8b53-5764701c2199" />
+                </form>
+                <p>Hier <a href="get-register">registrieren</a>.</p>
+            </div>
+        </div>
+    </div>
+    <div style="height:200px"></div>
+</div>
+
+<div id="includedFooter"></div>
+
+</body>
+
+</html>
