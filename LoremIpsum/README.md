@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="/doc/webshop_faded.png" />
+  <img src="/LoremIpsum/doc/webshop_faded.png" />
 </p>
 
 
