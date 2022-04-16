@@ -1,0 +1,22 @@
+.user-table-container {
+    margin-top: 1rem;    
+}
+
+.ut-first-col {
+    width: 20px;
+}
+
+.ut-last-col {
+    width: 15px;
+}
+
+.user-form {
+    width: 60%;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    display: flex;
+}
+
+.user-form > div {
+    margin-right: 2rem;
+}

@@ -1,0 +1,58 @@
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0px 10px 50px 20px rgba(170,117,210,0.25) inset;
+    -webkit-box-shadow: 0px 10px 50px 20px rgba(170,117,210,0.25) inset;
+    -moz-box-shadow: 0px 10px 50px 20px rgba(170,117,210,0.25) inset;
+}
+
+.login-container {
+    width: 300px;
+    height: 400px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.submit-button {
+    float: right;
+    background-color: #aa75d2 !important;
+    border: 2px solid #7030a0;
+}
+
+.edit-button {
+    height: 40px;
+    width: 40px;
+    background-color: #aa75d2 !important;
+    border: 2px solid #7030a0;
+    position: relative;
+    padding: 1rem i !important;
+    border-radius: 50%;
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1rem;
+}
+
+.onenote-logo-container {
+    height: 150px;
+    width: 150px;
+    background: url("../images/onenote_logo.png");
+    background-size: cover;
+    background-position: center center;
+    margin-bottom: 2rem;
+}
+
+.button-container {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+}
