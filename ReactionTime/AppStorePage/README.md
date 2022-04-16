@@ -2,7 +2,7 @@
 A simple preview site inspired by the Apple app store.
 The aim of this react.js project is to create a website to showcase mobile apps without uploading them to the actual app or play store
 
-![AppStore Website Preview](/res/app_store_preview.png)
+![AppStore Website Preview](/ReactionTime/AppStorePage/res/app_store_preview.png)
 
 ## Installation and use
 After downloading, the website can be preview by running 
