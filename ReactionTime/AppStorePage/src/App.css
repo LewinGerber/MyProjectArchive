@@ -1,0 +1,135 @@
+body {
+  display: flex;
+  justify-content: center;
+  overflow-y: hidden;
+  padding-top: 2rem;
+}
+
+#container {
+  width: 60vw;
+  height: 100vh;
+  max-width: 50rem;
+  min-width: 300px;
+}
+
+p, h1, h2, h3, h4, h5 {
+  margin: 0;
+  padding: 0;
+}
+
+.image {
+  height: 24rem;
+  width: 13rem;
+  background-color: black;
+  background-position: center center;
+  background-size: cover;
+  border-radius: 5px;
+  border: 2px solid #EFEFEF;
+  
+  box-shadow: 0px 15px 21px -3px rgba(0,0,0,0.14);
+  -webkit-box-shadow: 0px 15px 21px -3px rgba(0,0,0,0.14);
+  -moz-box-shadow: 0px 15px 21px -3px rgba(0,0,0,0.14);
+  top: -20rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+#carousel {
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  width: 100%;
+ 
+  padding-bottom: 20rem;
+}
+
+.top_box {
+  margin-top: 5%;
+  display: flex;
+  position: relative;
+}
+
+#app_name {
+  font-weight: bolder;
+  line-height: 0.92;
+  font-size: 1.5rem;
+  padding-top: 0.5rem;
+}
+
+#app_short_description {
+  font-size: 1.15rem;
+  margin-top: 0.25rem;
+  line-height: 1;
+  color: #848484;
+}
+
+#app_icon_container {
+  height: 8rem;
+  min-height: 8rem;
+  width: 8rem;
+  min-width: 8rem;
+  border-radius: 10px;
+  margin-right: 2rem;
+  background: url('./assets/icon.png');
+  background-size: cover;
+  background-position: center center;
+}
+
+#download_button {
+  position: absolute;
+  bottom: 0;
+  left: 10rem;
+  width: 6rem;
+  height: 2rem;
+  border-radius: 50px;
+  background-color: #EEE;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 600px) {
+  #download_button {
+    left: 40%;
+  }
+}
+
+#download_button:hover {
+  background-color: #DDD;
+}
+
+#download_button > p {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #4383DB;
+}
+
+.description_box {
+  margin-top: 2rem;
+}
+
+.description_box > p {
+  font-size: 1rem;
+}
+
+#app_description {
+  color: #848484;
+  font-size: 0.9rem;
+}
+
+.image_slider_box {
+  margin-top: 2rem;
+  position: relative;
+}
+
+.image_slider_box > p {
+  font-size: 1rem;
+}
+
+.footer_box {
+  position: absolute;
+  bottom: 1rem;
+  font-size: 0.65rem;
+  color: #949494;
+}
