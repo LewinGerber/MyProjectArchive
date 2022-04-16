@@ -1,0 +1,384 @@
+/* general */
+html {
+  scroll-behavior: smooth;
+  user-select: none; /* supported by Chrome and Opera */
+   -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Firefox */
+   -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #0D0D0D;
+  color: white;
+  overflow-x: hidden;
+}
+
+h1, h2 {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+#menu-items {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+#menu-items > * {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#title {
+  display: block;
+  padding: 1rem;
+}
+
+.text-bold {
+  font-weight: 400;
+}
+
+#geogebra-view {
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.1);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.1);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.1);
+}
+
+#geogebra-view-container {
+  background-color: red;
+  width: 100vw;
+  height: 100vh;
+}
+
+#title-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: url('./content/images/main_background.jpg') no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+#t-s-content {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1;
+}
+
+#t-s-content > h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 10rem;
+  opacity: 0.85 !important;
+  line-height: 0.85;
+}
+
+#t-s-content > p{
+  margin: 0;
+  padding: 0;
+  font-weight: 100;
+  font-size: 1.5rem;
+  padding-left: 10px;
+}
+
+.view101 {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: green;
+}
+
+.text-icon {
+  padding: 0.25em;
+}
+
+#explore-button {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 1em;
+}
+
+#gradient {
+  background: rgb(13,13,13);
+background: linear-gradient(5deg, rgba(13,13,13,1) 20%, rgba(255,255,255,0) 100%); width: 100vw;
+  height: 100vh;
+  position: absolute;
+}
+
+#content-view {
+  position: relative;
+  width: 100vw;
+  height: 40%;
+}
+
+#title-text {
+  width: 80%;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  margin: 2rem 1rem 1rem 1rem;
+}
+
+#content-algorithm {
+  padding: 2rem;
+  width: 80%;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#content-algorithm > * {
+  width: 225px;
+  height: 225px;
+  padding: 1rem;
+  margin: 2rem;
+  background-color: #333333;
+  color: white;
+}
+
+#content-algorithm > *:hover {
+  transform: scale(1.05);
+  transition: transform 0.25s ease;
+}
+
+.m-t-1 {
+  margin-top: 1rem;
+}
+
+#kbw-logo {
+  width: 10rem;
+  height: calc(10rem * 0.35);
+  background: url("./content/images/kbw_logo_white.svg");
+  background-size: cover;
+  background-position: center center;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+
+  display: none;
+}
+
+@media screen and (min-width: 850px) {
+  #kbw-logo {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #title-text {
+    width: 50%;
+    font-size: 1.25rem;
+  }
+
+  #circles { display: block; }
+}
+
+#secondary-effect:hover {
+  transition: color 0.15s linear;
+  color: #F50057;
+  transition: transform 1s linear;
+  transform: scale(1.0075);
+}
+
+#geogebra-view {
+  display: none;
+  width: 80%;
+  padding: 2rem;
+
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#geogebra-view > h2,#geogebra-manual {
+  width: 100%;
+  margin-left: 2rem;
+}
+
+#geogebra-manual > p {
+  max-width: 45rem;
+}
+
+#geogebra-interface {
+  background-color: white;
+  margin: 1rem;
+  width: 100%;
+  height: 30rem;
+}
+
+#geogebra-content {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+  width: 100%;
+  padding: 1rem;
+  padding-top: 0;
+}
+
+#geogebra-menu {
+  width: auto;
+  padding: 1rem;
+  margin: 1rem;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: flex-end;
+
+  overflow: hidden;
+  background-color: rgba(245, 0, 87, 0.8);
+  border-radius: 20px;
+}
+
+.menu-element {
+  margin-bottom: 1rem;
+  background-color: rgba(245, 0, 87, 1) !important;
+  color: white !important;
+  width: 100%;
+}
+
+.menu-element > div {
+  padding: 0.5rem;
+}
+
+#controller-title {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#controller-title > span {
+  margin-left: 0.5rem;
+}
+
+@media screen and (min-width: 650px) {
+  #geogebra-view {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  #geogebra-interface {
+    max-width: 50rem;
+  }
+}
+
+.menu-subtitle {
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-subtitle > span {
+  margin-left: 0.5rem;
+}
+
+.menu-form {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+.menu-form > * {
+  margin-bottom: 0.5rem !important;
+}
+
+
+
+#canvas {
+  width: 500px;
+  height: 300px;
+  background-color: white;
+}
+
+.algo-view {
+  position: relative;
+  color: #A5A5A5 !important;
+  text-align: center;
+}
+
+.algo-title {
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  font-size: 2.5rem;
+  opacity: 0.85;
+}
+
+hr {
+  position: absolute;
+  width: 80%;
+  left: 50%;
+  top: 22.5%;
+  transform: translate(-50%, -50%);
+  color: #A5A5A5;
+}
+
+.algo-text {
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  width: 80%;
+  transform: translate(-50%, -50%);
+}
+
+.algo-text > p {
+  width: 100%;
+  text-align: left;
+}
+
+#footer-info {
+  width: 100vw;
+  height: 5rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.footer-text {
+  margin-right: 2rem;
+  font-size: 0.75rem;
+  font-style: italic;
+}
+
+.footer-element {
+  margin: 0;
+  padding: 0rem 1rem 1rem 1rem;
+}
