@@ -1,0 +1,27 @@
+.app {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#video {
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.1);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.1);
+  border: 1px solid #EEEEEE;
+  border-radius: 7.5px;
+  height: max-content;
+}
+
+#navbar-switcher {
+  padding: 0.5rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#toggle-group {
+  height: 2rem;
+}

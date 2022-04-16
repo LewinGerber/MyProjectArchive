@@ -1,0 +1,62 @@
+#svg-wrapper {
+    overflow: visible;
+    height: 25rem;
+    width: 25rem;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#svg-block {
+    overflow: visible;
+}
+
+#circle-1 {
+    animation: waves 3s ease infinite;
+    transform-origin: center center;
+}
+
+@keyframes waves {
+    25% {transform: scale(1)}
+    50% {transform: scale(1.5)}
+    80% {transform: scale(1)}
+}
+
+#circle-2 {
+    animation: waves-2 3s ease infinite;
+    transform-origin: center center;
+}
+
+@keyframes waves-2 {
+    12.5% {transform: scale(1)}
+    50% {transform: scale(1.5)}
+    60% {transform: scale(1.5)}
+    90% {transform: scale(1)}
+}
+
+#circle-3 {
+    animation: waves-3 3s ease infinite;
+    transform-origin: center center;
+}
+
+@keyframes waves-3 {
+    0% {transform: scale(1)}
+    50% {transform: scale(1.5)}
+    70% {transform: scale(1.5)}
+    100% {transform: scale(1)}
+}
+
+.bg-image {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -2;
+  }
+
+
+
