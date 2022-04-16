@@ -1,0 +1,30 @@
+# GET THUMBNAIL
+
+@RequestMapping(
+            method = RequestMethod.GET,
+            value= "/getThumbnail/{id}",
+            produces = MediaType.IMAGE_JPEG_VALUE
+    )
+    public byte[] getThumbnailE(@PathVariable int id) throws IOException {
+        System.out.println(webService.retrieveThumbnail(1));
+        return webService.retrieveThumbnail(id);
+    }
+
+public byte[] retrieveThumbnail(int id) throws IOException {
+        for(File image : imageDir.listFiles()) {
+            if(image.getName().substring(image.getName().length()-6).substring(0, 2).equals("t" + id))
+                return Files.readAllBytes(Paths.get(image.getPath()));
+        }
+        return null;
+    }
+
+    public File eztri(int id) throws IOException {
+        for(File image : imageDir.listFiles()) {
+            if(image.getName().substring(image.getName().length()-6).substring(0, 2).equals("t" + id))
+                return image;
+        }
+        return null;
+    }
+
+
+#

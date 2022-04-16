@@ -1,0 +1,113 @@
+#product {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+.product-image{
+    width: 5rem;
+    height: auto;
+    display: block;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+}
+
+#product-item {
+    position: relative;
+    border: 2px solid #707070;
+    overflow: hidden;
+    width: 12.5rem;
+    height: 17.5rem;
+    margin: 1rem;
+}
+
+#product-item:hover {
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.11);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.11);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.11);
+}
+
+#product-label {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -90%);
+    width: 9rem;
+    border: 1px solid #707070;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 0.5rem;
+}
+
+#product-label:hover {
+    transition: background 0.25s ease-in-out;
+    transition: color 0.15s ease-in-out;
+    background-color: #000000;
+    color: white;
+}
+
+#product-label > * {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    margin-right: 1rem;
+    text-transform: uppercase;
+}
+
+#product-hitbox {
+    height: 100%;
+    width: 100%;
+}
+
+#popup {
+    min-width: 30rem;
+    width: 100%;
+    max-width: 50vw;
+    min-height: 15rem;
+    height: auto;
+    max-height: 50vw;
+    background-color: #E9E9E9;
+    padding: 5rem;
+    padding-bottom: 2rem;
+    overflow: hidden;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#image-showcase {
+    border: 1px solid black;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    transform: translate(-10%, -10%)
+}
+
+#showcase-image {
+    height: 600px;
+    position: absolute;
+    width: auto;
+}
+
+#popup-content {
+    left: 25%;
+    top: 5%;
+    transform: translate(0, -5%);
+    position: absolute;
+    width: 20vw;
+    padding: 2rem;
+    padding-top: 0;
+}
+
+#pop-button {
+    width: 100%;
+
+}

@@ -1,0 +1,40 @@
+#login {
+    height: auto;
+    width: 15.5rem;
+    display: flex;
+    margin: 0.5rem;
+    flex-flow: column wrap;
+    justify-content: right;
+    align-items: center;
+}
+
+#login > h1 {
+    margin: 0;
+    padding: 1rem;
+    padding-bottom: 0;
+    width: 80%;
+}
+
+#tf {
+    margin-top: 0.75rem;
+}
+
+#login-btn-container {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 1rem;
+    height: 3rem;
+    padding-top: 1rem;
+    width: 95%;
+}
+
+#login-button {
+    position: absolute;
+    right: 2rem;
+}
+
+#logged-in {
+    padding: 2rem;
+    padding-top: 0;
+}

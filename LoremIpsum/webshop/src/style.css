@@ -1,0 +1,211 @@
+body{
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='30' height='30' patternTransform='scale(2) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(0, 0%, 100%, 1)'/><path d='M0 22.5h30v15H0zm15-15h30v15H15m-30-15h30v15h-30zm15-15h30v15H0z'  stroke-width='0.5' stroke='hsla(0, 0%, 63%, 1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
+}
+
+h1 {
+    font-weight: normal;
+}
+
+#root{
+    width: 100vw;
+    min-height: 100vh;
+}
+
+#product-view{
+    width: 32.5rem;
+    height: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    overflow-y: scroll;
+}
+
+.rotate-switch-animation {
+    animation: spin-switch 1s infinite linear;
+    transform-origin: center left !important;
+}
+
+.color-switch-animation {
+    animation: color-switch 1s infinite linear;
+}
+
+#bg {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+}
+
+@keyframes color-switch {
+    0%   {background-color: rgba(255, 0, 0, 1);}
+    25%  {background-color: rgba(255, 255, 0, 0.5);}
+    50%  {background-color:rgba(13, 225, 245, 0.5);}
+    75%  {background-color: rgba(102, 255, 0, 0.5);}
+    100% {background-color: red;}
+}
+
+@keyframes spin-switch {
+    from   {transform: rotate(0deg);}
+    to  {transform: rotate(360deg);}
+}
+
+
+#menu-view{
+    overflow-y: scroll;
+    width: 100%;
+    max-width: 45vw;
+    min-width: 350px;
+    min-height: 80vh;
+    height: auto;
+    border-left: 1px solid black;
+}
+
+#spliter{
+    z-index: -2;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    min-height: 100vh;
+    height: 80vh;
+}
+
+#views-flexer {
+    position: absolute;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-flow: row nowrap;
+    border: 2px solid #707070;
+    margin-top: 2rem;
+    overflow: hidden;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.11);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.11);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.11);
+}
+
+@media screen and (min-width: 800px) {
+    #views-flexer {
+        margin: 0;
+        position: absolute;
+        height: 90vh;
+        width: 80vw;
+    }
+}
+
+#cart-login-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-top: 3rem;
+}
+
+#title-area {
+    margin: 2rem;
+    padding-top: 1rem;
+    text-align: justify;
+}
+
+#title-area > h1 {
+    padding-top: 2rem;
+    font-weight: bold;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+#login-container {
+    border: 2px solid #707070;
+    margin: 1rem;
+}
+
+#login-container > h1 {
+    margin: 0;
+    padding: 1rem;
+    padding-bottom: 0;
+    width: 80%;
+}
+
+#login-container:hover {
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.11);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.11);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.11);
+}
+
+#cart-container {
+    border: 2px solid #707070;
+    margin: 1rem;
+}
+
+#cart-container > h1 {
+    position: relative;
+    margin: 0;
+    padding: 1rem;
+    padding-bottom: 0;
+    width: 80%;
+}
+
+#cart-container:hover {
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.11);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.11);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.11);
+}
+
+#icon {
+    padding-right: 1rem;
+    margin-top: 0.25rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#mode-trigger {
+    position: absolute;
+    z-index: 5 !important;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+}
+
+#mode-trigger-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5 !important;
+    width: 50px;
+    height: 50px;
+}
+
+#mode-trigger-3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 5 !important;
+    width: 50px;
+    height: 50px;
+}
+
+#title-presentation {
+    display: none;
+    height: 10rem;
+    font-size: 5rem;
+    font-weight: bold;
+    line-height: 0.8;
+    color: white;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    z-index: 3 !important;
+}
+
+.show {
+    display: block !important;
+}
